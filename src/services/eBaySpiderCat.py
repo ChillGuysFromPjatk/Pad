@@ -1,7 +1,6 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
 
 class EbayScraperItem(scrapy.Item):
     model = scrapy.Field()
@@ -48,7 +47,7 @@ class eBaySpider(scrapy.Spider):
         for listing in listings:
             loader = ItemLoader(item=EbayScraperItem(), selector=listing)
             
-            loader.add_value('model', model)  # Dodanie nazwy modelu z listy
+            loader.add_value('model', model)
             loader.add_xpath('title', './/a[@class="s-item__link"]//div[@class="s-item__title"]/span[@role="heading"]/text()')
             loader.add_xpath('price', './/div[@class="s-item__detail s-item__detail--primary"]/span[@class="s-item__price"]/span[@class="POSITIVE ITALIC"]/text()')
             loader.add_xpath('condition', './/span[contains(@class, "SECONDARY_INFO")]/text()')
