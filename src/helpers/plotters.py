@@ -1,5 +1,7 @@
 import plotly.express as px
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from plotly.graph_objs._figure import Figure
 
 
@@ -53,3 +55,18 @@ def plotly_bar(df: pd.DataFrame,x_axis: str, y_axis: str, title: str,
         font=dict(size=14, color=font_color)
     ))
     fig.show()
+
+
+def plot_corr_matrix(df: pd.DataFrame, fig_width: int = 8, fig_height: int = 10):
+    corr = df.corr()
+    plt.figure(figsize=(fig_width, fig_height))
+    sns.heatmap(
+        corr,
+        annot=True,
+        fmt=".2f",
+        cmap="coolwarm",
+        cbar=True,
+        linewidths=0.5
+    )
+    plt.title("Macierz korelacji zmiennych z 'price_pln'", fontsize=16)
+    plt.show()
