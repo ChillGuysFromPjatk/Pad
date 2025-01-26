@@ -109,6 +109,7 @@ def create_pie_chart(selected_producer='All', selected_model_group='All', select
         print("No data available for the selected filters.")
 
 def create_histogram(selected_producer='All', selected_model_group='All', selected_arg='None', selected_val='None'):
+    #Todo: Ej to ma być unresolved? Tu nie powinno być zmiennej w paramsach funkcji?
     filtered_df = df.copy()
     if selected_producer != 'All':
         filtered_df = filtered_df[filtered_df['producer'] == selected_producer]
