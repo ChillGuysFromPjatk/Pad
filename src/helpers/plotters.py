@@ -33,7 +33,7 @@ def plotly_pie(df: pd.DataFrame, values: str, names: str, title: str):
     fig.show()
 
 
-def plotly_bar(df: pd.DataFrame,x_axis: str, y_axis: str, title: str,
+def plotly_bar(df: pd.DataFrame, x_axis: str, y_axis: str, title: str,
                x_axis_title: str, y_axis_title: str, font_color: str = "white"):
     fig = px.bar(
         df, x=x_axis, y=y_axis, title=title,
@@ -56,6 +56,14 @@ def plotly_bar(df: pd.DataFrame,x_axis: str, y_axis: str, title: str,
     ))
     fig.show()
 
+def plot_regular_bar(values: list, title: str, x_axis_title: str, y_axis_title: str,
+                     font_color: str = "white", color: str = "black"):
+    models_names, models_scores = zip(*values)
+    plt.bar(models_names, models_scores)
+    plt.title(title)
+    plt.xlabel(x_axis_title)
+    plt.ylabel(y_axis_title)
+    plt.show()
 
 def plot_corr_matrix(df: pd.DataFrame, fig_width: int = 8, fig_height: int = 10):
     corr = df.corr()
