@@ -13,7 +13,7 @@ wcześniej wspomnianego okresu. Nieprzetworzony plik znajduje się w lokalizacji
 Dane zostały poddane przetworzeniu, transformacji oraz kodowaniu zmiennych. Trzy wersje przetworzenego pliku znajdują się
 w lokalizacji **\notebooks\cleaned**. Jeden z nich jest używany do wykresów (_full_cleaned.csv), jeden został przygotowany przy
 pomocy transformacji danych kategorycznych na numeryczne przy użyciu biblioteki **category_encoders** (_encoded.csv). Ostatni zawiera 
-wyselekcjonowane atrybuty (_dropped.csv).
+wyselekcjonowane atrybuty (_dropped.csv). 
 
 Na ich podstawie zbudowane zostały trzy modele regresyjne, służące do przewidywania wyników zmiennej ceny:   
 1. Model regresji liniowej: **\notebooks\models\LinearRegression.ipynb** - z wykorzystaniem bibliotek statsmodels oraz sklearn
@@ -24,7 +24,9 @@ Wszystkie modele zostały trenowane zarówno na zbiorze z usuniętymi kolumnami 
 kolumnami zakodowanymi (_encoded.csv).
 
 Szczegółowa wizualizacja danych, zarówno po czyszczeniu jak i już po modelowaniu, zawarta została w pliku 
-**\notebooks\data_visualization.ipynb**.
+**\notebooks\data_visualization.ipynb**. Wykresy generowane z biblioteki **plotly** zostały umieszczoene w katalogu
+**\notebooks\graphs**, z uwagi na brak możliwości ich podglądu przez githuba - niemniej wszystko znadjuje się również w 
+głównym notebooku do wizualizacji **\notebooks\data_visualization.ipynb**.
 
 
 Dane Techniczne:  
