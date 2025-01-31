@@ -30,5 +30,6 @@ głównym notebooku do wizualizacji **\notebooks\data_visualization.ipynb**.
 
 
 Dane Techniczne:  
-W celu poprania zależnych paczek uruchomić komendę: **pip install -r requirements.txt**  
-W celu pobrania danych ze strony ebay: **scrapy crawl eBaySpider -o output_ebayspidercat_2.csv** bądź uruchomić kod znajdujący się bezpośrednio w pliku **\services\eBaySpiderCat.py**
+1. W celu poprania zależnych paczek uruchomić komendę: **pip install -r requirements.txt**  
+2. W celu pobrania danych ze strony ebay: **scrapy crawl eBaySpider -o output_ebayspidercat_2.csv** bądź uruchomić kod znajdujący się bezpośrednio w pliku **\services\eBaySpiderCat.py**
+3. Dashboard **data_visualization.ipynb** zawiera interaktywne elementy napisane przy użycu biblioteki ipywidgets. W celu zapewnienia jak najlepszej satysfakcji należy uruchomiać go lokalnie, przy wcześniejszej instalacji wymaganych paczek.
