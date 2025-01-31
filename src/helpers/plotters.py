@@ -57,12 +57,18 @@ def plotly_bar(df: pd.DataFrame, x_axis: str, y_axis: str, title: str,
     fig.show()
 
 def plot_regular_bar(values: list, title: str, x_axis_title: str, y_axis_title: str,
-                     font_color: str = "white", color: str = "black"):
+                     font_color: str = "white", bar_color: str = 'green'):
     models_names, models_scores = zip(*values)
-    plt.bar(models_names, models_scores)
-    plt.title(title)
-    plt.xlabel(x_axis_title)
-    plt.ylabel(y_axis_title)
+    models_names = [model_name.replace(' ', '\n') for model_name in models_names]
+    if any(len(model_name) > 15 for model_name in models_names):
+        plt.figure(figsize=(15, 6))
+    bars = plt.bar(models_names, models_scores, color=bar_color)
+    for bar, score in zip(bars, models_scores):
+        plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), score, ha='center', va='bottom', color=bar_color)
+    plt.title(title, color=font_color)
+    plt.xlabel(x_axis_title, color=font_color)
+    plt.ylabel(y_axis_title, color=font_color)
+    plt.tight_layout()
     plt.show()
 
 def plot_corr_matrix(df: pd.DataFrame, fig_width: int = 8, fig_height: int = 10):
