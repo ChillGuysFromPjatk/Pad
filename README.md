@@ -1,5 +1,5 @@
 # Programowanie dla analityki danych
-**Przemysław Oneksiak s34225,  Krzysztof Piórkowski s34226**
+**Autorzy: Przemysław Oneksiak,  Krzysztof Piórkowski**
 
 Projekt ma na celu analizę rynku wtórnego konsol do gier, w szczególności predykcji ich ceny. Dane zebrane na cele projektu
 pochodziły z ogłoszeń wystawionych na stronie:  
